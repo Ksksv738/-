@@ -37,8 +37,7 @@
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "shortcutName": "Lertovs RP"
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
