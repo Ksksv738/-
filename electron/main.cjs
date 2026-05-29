@@ -1,14 +1,11 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
-const isDev = require('electron-is-dev');
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
     height: 720,
-    minWidth: 1000,
-    minHeight: 600,
     frame: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
@@ -18,9 +15,8 @@ function createWindow() {
     backgroundColor: '#050508',
   });
 
-  win.loadURL(
-    isDev ? 'http://localhost:5173' : `file://${path.join(__dirname, '../dist/index.html')}`
-  );
+  // В продакшене загружаем собранный файл
+  win.loadFile(path.join(__dirname, '../dist/index.html'));
 }
 
 ipcMain.handle('launch-game', async (event, gamePath) => {
