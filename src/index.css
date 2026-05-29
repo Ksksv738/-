@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #020617;
+}
+
+@layer base {
+  body {
+    background-color: #020617;
+    color: #e2e8f0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
